@@ -1,0 +1,69 @@
+###
+
+GET http://localhost:3000 HTTP/1.1
+
+###
+
+POST http://localhost:3000/customers HTTP/1.1
+content-type: application/json; charset=utf-8
+
+{
+  "name": "diogo leão",
+  "email": "diogosapessoa@gmail.com",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/customers/authenticate HTTP/1.1
+content-type: application/json; charset=utf-8
+
+{
+  "email": "diogosapessoa@gmail.com",
+  "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/customers/refresh-token HTTP/1.1
+content-type: application/json; charset=utf-8
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzRiM2ZmMGM2NGQzMWRmMDJlOWMzYiIsImVtYWlsIjoiZGlvZ29zYXBlc3NvYUBnbWFpbC5jb20iLCJuYW1lIjoiZGlvZ28gbGXDo28iLCJpYXQiOjE2NDAyODMzMDAsImV4cCI6MTY0MDM2OTcwMH0.z0flkXtbV9rYgogC20bdceNwAMnRQPxv9c_DuUlWlOs
+
+###
+
+POST http://localhost:3000/products HTTP/1.1
+content-type: application/json; charset=utf-8
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzRiM2ZmMGM2NGQzMWRmMDJlOWMzYiIsImVtYWlsIjoiZGlvZ29zYXBlc3NvYUBnbWFpbC5jb20iLCJuYW1lIjoiZGlvZ28gbGXDo28iLCJpYXQiOjE2NDAyODMzMDAsImV4cCI6MTY0MDM2OTcwMH0.z0flkXtbV9rYgogC20bdceNwAMnRQPxv9c_DuUlWlOs
+
+{
+  "title": "teclado gamer",
+  "slug": "teclado-gamer",
+  "description": "Teclado Gamer",
+  "price": 499,
+  "active": true,
+  "tags":[
+      "informatica", "teclado", "games"
+  ]
+}
+
+###
+
+PUT http://localhost:3000/products/teclado-gamer HTTP/1.1
+content-type: application/json; charset=utf-8
+
+{
+  "price": 539
+}
+
+###
+
+GET http://localhost:3000/products HTTP/1.1
+
+### 
+
+GET http://localhost:3000/products/teclado-gamer HTTP/1.1
+
+
+###
+
+DELETE http://localhost:3000/products/teclado-gamer HTTP/1.1
