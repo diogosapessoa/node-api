@@ -9,9 +9,9 @@
 Add `.env` file with keys and values
 
 ```config
-NODE_ENV=dev
-MONGO_CONNECTION=
-JWT_KEY=
+NODE_ENV={dev|prod}
+MONGO_CONNECTION={connectionString}
+JWT_KEY={key}
 ```
 
 ## Install dependencies
